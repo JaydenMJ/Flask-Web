@@ -10,7 +10,15 @@ def home_page():
 @app.route('/About')
 @app.route('/about')
 def about_page():
-    return render_template('about.html',item_name='Phone')
+    items = [
+        {'id':1,'name':'Phone','barcode':'893212299897','price':1000},
+        {'id':2,'name':'Laptop','barcode':'123985473165','price':2000},
+        {'id':3,'name':'TV','barcode':'231985128446','price':3000},
+
+
+        ]
+
+    return render_template('about.html',items=items)
 
 
 if __name__ == '__main__' :
