@@ -10,7 +10,7 @@ def home_page():
 @app.route('/About')
 @app.route('/about')
 def about_page():
-    return render_template('about.html')
+    return render_template('about.html',item_name='Phone')
 
 
 if __name__ == '__main__' :
