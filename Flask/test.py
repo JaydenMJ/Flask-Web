@@ -2,9 +2,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/Home')
+@app.route('/home')
 def home_page():
-    return render_template('home.html')
+    return render_template('home_New.html')
 
 
 @app.route('/About')
@@ -18,7 +18,7 @@ def about_page():
 
         ]
 
-    return render_template('about.html',items=items)
+    return render_template('about_New.html',items=items)
 
 
 if __name__ == '__main__' :
