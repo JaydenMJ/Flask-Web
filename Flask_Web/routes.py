@@ -1,5 +1,5 @@
 from Flask_Web import app,db
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash,get_flashed_messages
 from Flask_Web.models import Item, User
 from Flask_Web.forms import RegisterForm
 
@@ -28,5 +28,5 @@ def register_page():
         return redirect(url_for('about_page'))
     if form.errors != {}: # No error 
         for err_msg in form.errors.values():
-            print(f'There was an error with creating a user: {err_msg}')
+            flash(f'There was an error with creating a user: {err_msg}', category='danger')
     return render_template('register.html',form=form)
